@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  clean_architect_board_db:
+    image: postgres:13
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - clean_architect_app
+networks:
+  clean_architect_app:
